@@ -5,13 +5,11 @@ const ResultModal = forwardRef(function ResultModal(
   ref
 ) {
   const dialog = useRef()
-  useImperativeHandle(ref, () => {
-    return {
-      open() {
-        dialog.current.showModal()
-      },
-    }
-  })
+  useImperativeHandle(ref, () => ({
+    open() {
+      dialog.current.showModal()
+    },
+  }))
 
   return (
     <dialog ref={dialog} className="result-modal">
